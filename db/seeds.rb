@@ -7,3 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(email: "demo@demo.com", password: "password", password_confirmation: "password")
+20.times do
+  firstname = Faker::Name.first_name
+  lastname = Faker::Name.last_name
+  address = Faker::Address.street_name
+  gender = "Male"
+  Doctor.create(first_name: firstname, last_name: lastname, address: address, gender: gender)
+end
+
+20.times do
+  firstname = Faker::Name.first_name
+  lastname = Faker::Name.last_name
+  address = Faker::Address.street_name
+  gender = "Female"
+  Doctor.create(first_name: firstname, last_name: lastname, address: address, gender: gender)
+end

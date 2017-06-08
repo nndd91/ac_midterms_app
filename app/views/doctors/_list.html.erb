@@ -1,0 +1,17 @@
+  <table class="table">
+    <% @doctors.each_with_index do |doctor, index| %>
+      <tr>
+        <td><%= index+1 %>
+      </td>
+        <td>
+          <%= link_to doctor.first_name, doctor_path(doctor) %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_doctor_path(doctor) %>
+        </td>
+        <td>
+          <%= link_to 'Delete', doctor_path(doctor), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>

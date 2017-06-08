@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
-  before_action :set_doctor, only: [:show, :edit]
-  before_action :authenticate_user!
+  before_action :set_doctor, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   def new
     @doctor = Doctor.new
@@ -18,6 +18,8 @@ class DoctorsController < ApplicationController
   end
 
   def update
+    @doctor.update(doctor_params)
+    redirect_to doctor_path(@doctor)
   end
 
   def create
@@ -30,6 +32,16 @@ class DoctorsController < ApplicationController
   end
 
   def destroy
+    @doctor.destroy
+    redirect_to doctors_path
+  end
+
+  def list_male
+    @doctors = Doctor.where(gender: "Male")
+  end
+
+  def list_female
+    @doctors = Doctor.where(gender: "Female")
   end
 
   private

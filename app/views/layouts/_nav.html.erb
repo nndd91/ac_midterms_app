@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to 'Home', root_path %>
+      </li>
+      <li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          </li>
+          <li>
+            <%= link_to 'Male Doctors', list_male_doctors_path %>
+          </li>
+          <li>
+            <%= link_to 'Female Doctors', list_female_doctors_path %>
+          </li>
+          <li>
+            <%= link_to 'New Doctor', new_doctor_path %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to 'Login', new_user_session_path %>
+          </li>
+        <% end %>
+
+    </ul>
+  </div>
+</nav>
