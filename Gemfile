@@ -39,6 +39,16 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  # RSpec for Rails 3+
+  gem 'rspec-rails'
+  # A library for setting up Ruby objects as test data.
+  gem 'factory_girl_rails'
+  # Brings back `assigns` and `assert_template` to your Rails tests
+  gem 'rails-controller-testing'
+  # Collection of testing matchers extracted from Shoulda
+  gem 'shoulda-matchers'
+  # Guard::RSpec automatically run your specs (much like autotest)
+  gem 'guard-rspec', require: false
 end
 
 group :development do
@@ -48,7 +58,18 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Guard::Bundler automatically install/update your gem bundle when needed
+  gem 'guard-bundler', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Flexible authentication solution for Rails with Warden
+gem 'devise'
+# Official Sass port of Bootstrap 2 and 3.
+gem 'bootstrap-sass'
+# A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker'
+# Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup.
+gem 'simple_form'
